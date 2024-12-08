@@ -17,13 +17,13 @@ interface WaitlistEmailProps {
 export default function WaitlistEmail({ userEmail }: WaitlistEmailProps) {
   return (
     <Html>
-      <Preview>Welcome to our waitlist!</Preview>
+      <Preview>Welcome to our community!</Preview>
       <Body style={main}>
         <Container style={container}>
           <Heading style={h1}>Welcome to the Waitlist!</Heading>
           <Section style={section}>
             <Text style={text}>
-              Thank you for joining our waitlist! We're excited to have you on
+              Thank you for joining our community! We're excited to have you on
               board.
             </Text>
             <Text style={text}>

@@ -1,4 +1,3 @@
-// app/api/waitlist/route.ts
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { supabase } from "@/lib/supabase/client";
@@ -21,9 +20,10 @@ export async function POST(req: Request) {
     }
 
     // Insert into Supabase
-    const { error: insertError } = await supabase.from("waitlist").insert([
+    const { error: insertError } = await supabase.from("subscribers").insert([
       {
         email,
+        // tracking_id: trackingId,
       },
     ]);
 
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
       if (insertError.code === "23505") {
         // Unique violation
         return NextResponse.json(
-          { error: "This email is already on the waitlist" },
+          { error: "This email is already on the subscription list" },
           { status: 400 }
         );
       }
@@ -47,12 +47,11 @@ export async function POST(req: Request) {
       }
 
       return NextResponse.json(
-        { error: "Failed to join waitlist" },
+        { error: "Failed to join subscription list" },
         { status: 500 }
       );
     }
 
-    // Optional: Send confirmation email via Resend
     try {
       const html = await render(
         WaitlistEmail({
@@ -63,7 +62,7 @@ export async function POST(req: Request) {
       await resend.emails.send({
         from: "NextBoost <onboarding@resend.dev>",
         to: email,
-        subject: "Welcome to the Waitlist!",
+        subject: "Welcome to our community!",
         html: html,
       });
     } catch (emailError) {
@@ -72,7 +71,7 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json(
-      { success: true, message: "Successfully joined waitlist" },
+      { success: true, message: "Successfully joined the subscription list" },
       { status: 200 }
     );
   } catch (error) {

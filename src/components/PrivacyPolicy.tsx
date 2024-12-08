@@ -11,7 +11,7 @@ interface PrivacyPolicyProps {
 const PrivacyPolicy = ({
   companyName,
   companyAddress = "",
-  email = "cngai@justplatypost.com",
+  email = "legal@company.com",
   lastUpdated = "December 6, 2024",
 }: PrivacyPolicyProps) => {
   return (
