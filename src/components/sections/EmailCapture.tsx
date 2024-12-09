@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -13,12 +12,6 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Loader2, CheckCircle2, XCircle } from "lucide-react";
 
 export default function EmailCapture() {
-  // Initialize Supabase client - replace with your credentials
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
-
   const EmailCaptureCard = () => {
     const [email, setEmail] = useState("");
     const [submissionState, setSubmissionState] = useState<

@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Rocket, Mail, Check, BarChart } from "lucide-react";
+import { Mail, Check, BarChart } from "lucide-react";
+import { ReactNode } from "react";
 
 export default function Features() {
-  // @ts-ignore
-  const FeatureCard = ({ icon, title, description }) => (
+  const FeatureCard = ({
+    icon,
+    title,
+    description,
+  }: {
+    icon: ReactNode;
+    title: string;
+    description: string;
+  }) => (
     <Card>
       <CardContent className="p-6">
         <div className="h-12 w-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
@@ -44,7 +52,7 @@ export default function Features() {
             <Button
               size="lg"
               onClick={() =>
-                // @ts-ignore
+                // @ts-expect-error Item not null
                 document
                   .getElementById("email-capture")
                   .scrollIntoView({ behavior: "smooth" })

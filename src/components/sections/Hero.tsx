@@ -18,7 +18,7 @@ export default function Hero() {
                 size="lg"
                 className="flex items-center gap-2"
                 onClick={() =>
-                  // @ts-ignore
+                  // @ts-expect-error Item not null
                   document
                     .getElementById("email-capture")
                     .scrollIntoView({ behavior: "smooth" })
@@ -30,7 +30,7 @@ export default function Hero() {
                 size="lg"
                 variant="outline"
                 onClick={() =>
-                  // @ts-ignore
+                  // @ts-expect-error Item not null
                   document
                     .getElementById("features")
                     .scrollIntoView({ behavior: "smooth" })

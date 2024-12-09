@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <>
@@ -5,7 +7,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex">
             <span className="mb-2 text-xl font-bold">
-              <a href="/">Your Brand</a>
+              <Link href="/">Your Brand</Link>
             </span>
           </div>
           <div className="flex justify-between items-center">
@@ -13,18 +15,18 @@ export default function Footer() {
               © {new Date().getFullYear()} Your Brand. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              <a
+              <Link
                 href="/terms"
                 className="text-sm text-gray-500 hover:text-gray-900"
               >
                 Terms
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/privacy"
                 className="text-sm text-gray-500 hover:text-gray-900"
               >
                 Privacy
-              </a>
+              </Link>
             </div>
           </div>
         </div>

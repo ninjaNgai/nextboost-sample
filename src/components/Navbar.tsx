@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Rocket } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -9,7 +10,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Rocket className="h-8 w-8 text-blue-600" />
             <span className="ml-2 text-xl font-bold">
-              <a href="/">Your Brand</a>
+              <Link href="/">Your Brand</Link>
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -17,7 +18,7 @@ export default function Navbar() {
               size="lg"
               className="flex items-center gap-2"
               onClick={() =>
-                // @ts-ignore
+                // @ts-expect-error item may be null
                 document
                   .getElementById("email-capture")
                   .scrollIntoView({ behavior: "smooth" })

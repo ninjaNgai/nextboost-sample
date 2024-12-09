@@ -67,9 +67,9 @@ const TermsOfService = ({
             <h2 className="text-xl font-semibold mb-3">3. Disclaimer</h2>
             <div className="space-y-2 text-gray-700">
               <p>
-                NextBoost is provided "as is", without warranty of any kind,
-                express or implied. {companyName} makes no warranties, expressed
-                or implied, and hereby disclaims and negates all other
+                NextBoost is provided &ldquo;as is&rdquo;, without warranty of
+                any kind, express or implied. {companyName} makes no warranties,
+                expressed or implied, and hereby disclaims and negates all other
                 warranties including, without limitation:
               </p>
               <ul className="list-disc pl-6 space-y-2">

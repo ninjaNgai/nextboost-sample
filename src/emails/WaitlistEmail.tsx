@@ -23,11 +23,11 @@ export default function WaitlistEmail({ userEmail }: WaitlistEmailProps) {
           <Heading style={h1}>Welcome to the Waitlist!</Heading>
           <Section style={section}>
             <Text style={text}>
-              Thank you for joining our community! We're excited to have you on
-              board.
+              Thank you for joining our community! We&apos;re excited to have
+              you on board.
             </Text>
             <Text style={text}>
-              We'll notify you at {userEmail} as soon as we launch.
+              We&apos;ll notify you at {userEmail} as soon as we launch.
             </Text>
             <Text style={text}>
               In the meantime, follow us on{" "}
