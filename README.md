@@ -20,6 +20,18 @@ git clone https://github.com/ninjaNgai/nextboost-sample.git your-app
 cd your-app
 ```
 
+Optional: Remove git and connect to your remote repository
+
+```
+rm -rf .git
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin <your-repo-url>
+git branch -M main
+git push -u origin main
+```
+
 2. Install dependencies:
 
 ```bash
